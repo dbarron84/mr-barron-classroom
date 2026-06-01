@@ -19,18 +19,26 @@
       </header>
 
       <section class="results-note">
-        <h2>Best first attempt: Microsoft 365</h2>
-        <p>Try a Power Automate flow that receives a completed-game result and adds a row to an Excel table stored in OneDrive or SharePoint. This may depend on school licensing and whether HTTP request triggers are available to your account.</p>
+        <h2>Microsoft 365 results connection</h2>
+        <p>The games are ready to send every finished result to one Power Automate flow. The flow should receive the result, then add a row to the <strong>GameResults</strong> table in the Excel workbook.</p>
       </section>
 
       <section class="game-grid">
         <article class="game-card">
-          <span>Data row</span>
-          <strong>Date, child, game, topic, score, correct, attempts, accuracy, and total score.</strong>
+          <span>1. Excel</span>
+          <strong>Create or upload the workbook named Mr Barron Game Results.xlsx. It must contain a table called GameResults.</strong>
         </article>
         <article class="game-card">
-          <span>Analysis</span>
-          <strong>Excel can then filter by child, topic, game, week, and progress over the year.</strong>
+          <span>2. Power Automate</span>
+          <strong>Create a cloud flow with the trigger When an HTTP request is received, then add a row into the Excel table.</strong>
+        </article>
+        <article class="game-card">
+          <span>3. Website</span>
+          <strong>Paste the flow's HTTP URL into results-config.js as CLASSROOM_RESULTS_ENDPOINT.</strong>
+        </article>
+        <article class="game-card">
+          <span>Columns</span>
+          <strong>Timestamp, Game, PlayerName, Score, Correct, Attempts, Accuracy, BestStreak, Level, topic scores, topic correct counts, DurationSeconds, SourceUrl.</strong>
         </article>
       </section>
     </main>
