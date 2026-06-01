@@ -9,6 +9,7 @@
       Timestamp: payload.timestamp || now.toISOString(),
       Game: payload.game || "",
       PlayerName: payload.playerName || payload.name || "",
+      ClassLevel: payload.classLevel || payload.ClassLevel || "",
       Score: Number(payload.score || payload.totalScore || 0),
       Correct: correct,
       Attempts: attempts,
@@ -51,12 +52,12 @@
     }
 
     const body = JSON.stringify(row);
-fetch(endpoint, {
-  method: "POST",
-  keepalive: true,
-  headers: { "Content-Type": "application/json" },
-  body,
-}).catch(() => savePending(row));
+    fetch(endpoint, {
+      method: "POST",
+      keepalive: true,
+      headers: { "Content-Type": "application/json" },
+      body,
+    }).catch(() => savePending(row));
 
     return { sent: true };
   }
