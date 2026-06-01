@@ -1,1 +1,1 @@
-window.CLASSROOM_RESULTS_ENDPOINT = "https://defaultc44cdad8013c43038b7b38e3a7bd68.40.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/c9afbf8719664682ac2d154e05c41c3c/triggers/manual/paths/invoke?api-version=1";
+window.CLASSROOM_RESULTS_ENDPOINT = "https://defaultc44cdad8013c43038b7b38e3a7bd68.40.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/c9afbf8719664682ac2d154e05c41c3c/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ufdcCAq5fYozDqUaZcs4pMBkQ69fNX4qSTUPgICjkgo";
