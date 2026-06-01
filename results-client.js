@@ -51,18 +51,12 @@
     }
 
     const body = JSON.stringify(row);
-    if (navigator.sendBeacon) {
-      const blob = new Blob([body], { type: "text/plain;charset=UTF-8" });
-      if (navigator.sendBeacon(endpoint, blob)) return { sent: true };
-    }
-
-    fetch(endpoint, {
-      method: "POST",
-      mode: "no-cors",
-      keepalive: true,
-      headers: { "Content-Type": "text/plain;charset=UTF-8" },
-      body,
-    }).catch(() => savePending(row));
+fetch(endpoint, {
+  method: "POST",
+  keepalive: true,
+  headers: { "Content-Type": "application/json" },
+  body,
+}).catch(() => savePending(row));
 
     return { sent: true };
   }
